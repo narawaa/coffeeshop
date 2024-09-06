@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body>
+        <nav class="border-b border-gray-300">
+            <div class="max-w-6xl mx-auto py-4 px-6">
+                <div class="flex justify-between">
+                    <a href="/" class="flex items-center">
+                        Click Coffee
+                    </a>
+    
+                    <ul class="flex items-center space-x-4">
+                        <a href="/"><li>Shop</li></a>
+                        <a href="/"><li>About</li></a>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section class="flex justify-center items-center bg-blue-200">
+            <div class="flex flex-col items-center py-24">
+                <div class="py-2">
+                    Welcome to Click Coffee
+                </div>
+    
+                <a href="/">
+                    <button class="bg-white py-3 px-5 rounded-lg">Start Shopping</button>
+                </a>
+            </div>
+        </section>
+
+        <section class="px-6 py-6 pb-[20rem]">
+            <div class="flex flex-wrap gap-12">
+                {% for product in products %}
+                <div class="flex flex-col w-1/4 bg-gray-100 py-4 px-10 rounded-lg">
+                    <img src="" alt="" class="rounded-xl hover:shadow-lg">
+                    <p>{{ product.name }}</p>
+                    <p class="text-gray-400">Rp. {{ product.price }}</p>
+                    <p class="text-gray-400">{{ product.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        
+    </body>
+
+    <footer class="sticky bottom-0 flex justify-between bg-gray-100 px-6 py-3">
+        <p>Nashwa Ghania (2306241770) PBP - F</p>
+        <p>&copy;2022 Click Coffee. All rights reserved.</p>
+    </footer>
+</html>
