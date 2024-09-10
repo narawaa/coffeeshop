@@ -8,11 +8,10 @@ Tugas - 2 PBP : [Click Your Coffee Here!](http://nashwa-ghania-coffeeshop.pbp.cs
    Membuat folder baru kemudian menjalankan virtual environment di dalamnya. Kemudian menginstall beberapa requirements yang dibutuhkan. Selanjutnya menjalankan perintah `django-admin startproject [nama_proyek]` untuk membuat direktori dasar dari proyek Django.
 
 2. **Membuat aplikasi dengan nama main pada proyek tersebut.**<br>
-   Menjalankan perintah `python manage.py startapp main` untuk membuat aplikan main.
+   Menjalankan perintah `python manage.py startapp main` untuk membuat aplikasi main.
 
 3. **Melakukan routing pada proyek agar dapat menjalankan aplikasi main.**<br>
-   Menambahkan rute yang diinginkan pada urls.py proyek untuk
-   mengarahkan request ke aplikasi "main". 
+   Menambahkan rute yang diinginkan pada urls.py proyek untuk mengarahkan request ke aplikasi "main". 
 
 4. **Membuat model pada aplikasi main dengan nama Product.**<br>
    Menambahkan model dengan atribut _name, price, description, time_, dan _stock_. Kemudian, memigrasikan model agar setiap perubahan dapat dilacak.
@@ -21,7 +20,7 @@ Tugas - 2 PBP : [Click Your Coffee Here!](http://nashwa-ghania-coffeeshop.pbp.cs
    Menambahkan fungsi frontpage di views.py untuk merender template HTML dan products yang ada. 
 
 6. **Membuat sebuah routing pada urls.py aplikasi main.**<br>
-   Menambahkan rute yang diinginkan pada urls.py main. untuk memetakan fungsi yang telah dibuat pada views.py.
+   Menambahkan rute yang diinginkan pada urls.py main untuk memetakan fungsi yang telah dibuat pada views.py.
 
 7. **Melakukan deployment ke PWS.**<br>
    Membuat proyek baru di PWS kemudian menambahkan URL deployment pada ALLOWED_HOST dalam settings.py. Selanjutnya menjalankan perintah push ke PWS.
