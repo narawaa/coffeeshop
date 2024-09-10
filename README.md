@@ -4,7 +4,7 @@ Tugas - 2 PBP : [Click Your Coffee Here!](http://nashwa-ghania-coffeeshop.pbp.cs
 
 ### Langkah Pengimplementasian
 
-1. **Membuat sebuah proyek Django baru.**
+1. **Membuat sebuah proyek Django baru.**<br>
    Membuat folder baru kemudian menjalankan virtual environment di dalamnya. Kemudian menginstall beberapa requirements yang dibutuhkan. Selanjutnya menjalankan perintah `django-admin startproject [nama_proyek]` untuk membuat direktori dasar dari proyek Django.
 
 2. **Membuat aplikasi dengan nama main pada proyek tersebut.**<br>
