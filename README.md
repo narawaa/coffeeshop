@@ -4,15 +4,14 @@ Tugas - 2 PBP : [Click Your Coffee Here!](http://nashwa-ghania-coffeeshop.pbp.cs
 
 ### Langkah Pengimplementasian
 
-1. **Membuat sebuah proyek Django baru.**
+1. **Membuat sebuah proyek Django baru.**<br>
    Membuat folder baru kemudian menjalankan virtual environment di dalamnya. Kemudian menginstall beberapa requirements yang dibutuhkan. Selanjutnya menjalankan perintah `django-admin startproject [nama_proyek]` untuk membuat direktori dasar dari proyek Django.
 
 2. **Membuat aplikasi dengan nama main pada proyek tersebut.**<br>
-   Menjalankan perintah `python manage.py startapp main` untuk membuat aplikan main.
+   Menjalankan perintah `python manage.py startapp main` untuk membuat aplikasi main.
 
 3. **Melakukan routing pada proyek agar dapat menjalankan aplikasi main.**<br>
-   Menambahkan rute yang diinginkan pada urls.py proyek untuk
-   mengarahkan request ke aplikasi "main". 
+   Menambahkan rute yang diinginkan pada urls.py proyek untuk mengarahkan request ke aplikasi "main". 
 
 4. **Membuat model pada aplikasi main dengan nama Product.**<br>
    Menambahkan model dengan atribut _name, price, description, time_, dan _stock_. Kemudian, memigrasikan model agar setiap perubahan dapat dilacak.
@@ -21,7 +20,7 @@ Tugas - 2 PBP : [Click Your Coffee Here!](http://nashwa-ghania-coffeeshop.pbp.cs
    Menambahkan fungsi frontpage di views.py untuk merender template HTML dan products yang ada. 
 
 6. **Membuat sebuah routing pada urls.py aplikasi main.**<br>
-   Menambahkan rute yang diinginkan pada urls.py main. untuk memetakan fungsi yang telah dibuat pada views.py.
+   Menambahkan rute yang diinginkan pada urls.py main untuk memetakan fungsi yang telah dibuat pada views.py.
 
 7. **Melakukan deployment ke PWS.**<br>
    Membuat proyek baru di PWS kemudian menambahkan URL deployment pada ALLOWED_HOST dalam settings.py. Selanjutnya menjalankan perintah push ke PWS.
@@ -30,6 +29,8 @@ Tugas - 2 PBP : [Click Your Coffee Here!](http://nashwa-ghania-coffeeshop.pbp.cs
    Membuat file README.md yang berisi tautan menuju aplikasi PWS dan beberapa jawaban dari pertanyaan.
 
 ### Alur Django
+<img width="491" alt="Screenshot 2024-09-10 at 23 05 38" src="https://github.com/user-attachments/assets/6d51b7bd-6f33-412d-8e9a-af292e41a086">
+
 Request client pertama kali diproses oleh **urls.py**, yang mencocokkan URL dengan fungsi view di **views.py**. Di dalam **views.py**, logika dijalankan dan jika data dari database diperlukan, fungsi view memanggil model di **models.py**. Setelah data diperoleh, view menyiapkan template HTML dengan data tersebut, lalu merendernya. Hasilnya berupa halaman web atau respon JSON yang dikirim kembali ke browser client. 
 
 ### Fungsi Git
