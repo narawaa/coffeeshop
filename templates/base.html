@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <nav class="border-b border-gray-300">
+        <div class="max-w-6xl mx-auto py-4 px-6">
+            <div class="flex justify-between">
+                <a href="/" class="flex items-center">
+                    Click Coffee
+                </a>
+
+                <ul class="flex items-center space-x-4">
+                    <a href="/"><li>Shop</li></a>
+                    <a href="/"><li>About</li></a>
+                    <a href="create-product-entry"><li>Add Product</li></a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <body>
+        {% block content %} {% endblock content %}
+    </body>
+
+    <footer class="fixed bottom-0 left-0 right-0 flex justify-between bg-gray-100 px-6 py-3">
+        <p>Nashwa Ghania (2306241770) PBP - F</p>
+        <p>&copy;2024 Click Coffee. All rights reserved.</p>
+    </footer>
+</html>
