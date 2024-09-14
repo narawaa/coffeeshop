@@ -51,20 +51,22 @@ Django menggunakan arsitektur Model-View-Template (MVT) yang membantu untuk mema
 
 Model Django disebut ORM karena memungkinkan untuk berinteraksi dengan database menggunakan Python, tanpa menulis query SQL langsung. Django ORM secara otomatis mengonversi model Python menjadi tabel database, menjadikan proses pengelolaan data lebih mudah dan mengurangi kemungkinan kesalahan dalam penulisan query SQL manual.
 
+<br>
+<br>
 
 ---
 ### Tugas 3
 #### Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?<br>
-Data delivery sangat diperlukan dalam pengimplementasian sebuah platform karena ia memastikan data yang diperlukan oleh aplikasi dapat dikirim dan diterima dengan tepat dan efisien antara server dan client. Tanpa sistem data delivery yang baik, data dapat rusak atau bahkan hilang. Proses data delivery mencakup pengiriman data secara real-time, pengelolaan bandwidth, serta jaminan keamanan data, sehingga pengguna mendapatkan akses yang stabil dan dapat mendapatkan informasi dan fitur yang mereka butuhkan.
+Data delivery sangat diperlukan dalam pengimplementasian sebuah platform karena ia memastikan data yang diperlukan oleh aplikasi dapat dikirim dan diterima dengan tepat dan efisien antara server dan client. Tanpa sistem data delivery yang baik, data dapat rusak atau bahkan hilang. Proses data delivery mencakup pengiriman data secara real-time, pengelolaan bandwidth, serta jaminan keamanan data, sehingga pengguna mendapatkan akses yang stabil dan dapat mendapatkan informasi dan fitur yang mereka butuhkan.<br>
 
 #### Menurutmu, mana yang lebih baik antara XML dan JSON? Mengapa JSON lebih populer dibandingkan XML?<br>
-Menurut saya, JSON lebih baik dibandingkan XML karena beberapa alasan. JSON menggunakan sintaks yang lebih sederhana untuk menyimpan dan bertukar data, sehingga lebih mudah digunakan. Untuk aplikasi AJAX, JSON lebih cepat dan lebih mudah dikelola daripada XML. Prosesnya juga lebih efisien, di mana JSON dapat diparsing menggunakan `JSON.parse()` dari sebuah string JSON, sedangkan XML memerlukan DOM untuk mengambil nilai dari dokumen XML. Karena kemudahan dan kecepatan JSON ini, ia sering dipilih sebagai alternatif yang lebih baik daripada XML dalam pengembangan aplikasi.
+Menurut saya, JSON lebih baik dibandingkan XML karena beberapa alasan. JSON menggunakan sintaks yang lebih sederhana untuk menyimpan dan bertukar data, sehingga lebih mudah digunakan. Untuk aplikasi AJAX, JSON lebih cepat dan lebih mudah dikelola daripada XML. Prosesnya juga lebih efisien, di mana JSON dapat diparsing menggunakan `JSON.parse()` dari sebuah string JSON, sedangkan XML memerlukan DOM untuk mengambil nilai dari dokumen XML. Karena kemudahan dan kecepatan JSON ini, ia sering dipilih sebagai alternatif yang lebih baik daripada XML dalam pengembangan aplikasi.<br>
 
 #### Jelaskan fungsi dari method is_valid() pada form Django dan mengapa kita membutuhkan method tersebut?<br>
-Method is_valid() pada form berfungsi untuk memeriksa apakah data yang dikirimkan melalui form sesuai dengan syarat-syarat yang sudah ditentukan. Method ini penting untuk memastikan bahwa data yang diterima aman dan sesuai sebelum diproses lebih lanjut.
+Method is_valid() pada form berfungsi untuk memeriksa apakah data yang dikirimkan melalui form sesuai dengan syarat-syarat yang sudah ditentukan. Method ini penting untuk memastikan bahwa data yang diterima aman dan sesuai sebelum diproses lebih lanjut.<br>
 
 #### Mengapa kita membutuhkan csrf_token saat membuat form di Django? Apa yang dapat terjadi jika kita tidak menambahkan csrf_token pada form Django? Bagaimana hal tersebut dapat dimanfaatkan oleh penyerang?<br>
-Peran csrf_token adalah untuk melindungi aplikasi dari serangan Cross-Site Request Forgery (CSRF). Tanpa token ini, form yang dikirimkan dapat dieksploitasi oleh penyerang untuk membuat permintaan berbahaya menggunakan kredensial pengguna yang sah. Token CSRF memastikan bahwa setiap permintaan POST berasal dari sumber yang valid dan bukan dari situs jahat. Tanpa csrf_token, aplikasi menjadi rentan terhadap serangan yang dapat mengubah data atau mengakses informasi pengguna secara tidak sah.
+Peran csrf_token adalah untuk melindungi aplikasi dari serangan Cross-Site Request Forgery (CSRF). Tanpa token ini, form yang dikirimkan dapat dieksploitasi oleh penyerang untuk membuat permintaan berbahaya menggunakan kredensial pengguna yang sah. Token CSRF memastikan bahwa setiap permintaan POST berasal dari sumber yang valid dan bukan dari situs jahat. Tanpa csrf_token, aplikasi menjadi rentan terhadap serangan yang dapat mengubah data atau mengakses informasi pengguna secara tidak sah.<br>
 
 #### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 1. **Membuat input form untuk menambahkan objek model pada app sebelumnya.**<br>
@@ -77,3 +79,8 @@ Mengimport HttpResponse dan serializers di views.py dan membuat method show_xml,
 Menambahkan rute URL pada urls.py. Untuk method show by id perlu tambahan `/<str:id>/` pada path urlpatterns.
 
 #### Mengakses keempat URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
+<img width="490" alt="Screenshot 2024-09-15 at 00 22 28" src="https://github.com/user-attachments/assets/d8b8060e-2def-4f1b-af39-11d03f971ec9">
+<img width="490" alt="Screenshot 2024-09-15 at 00 22 16" src="https://github.com/user-attachments/assets/27da225f-eb9a-431b-85d5-be525930ff8a">
+<img width="490" alt="Screenshot 2024-09-15 at 00 21 53" src="https://github.com/user-attachments/assets/3c644b5b-d83a-4053-ad11-16f154eec32c">
+<img width="490" alt="Screenshot 2024-09-15 at 00 21 53" src="https://github.com/user-attachments/assets/af83bcb0-16fe-4d91-af9b-538d697490b3">
+
