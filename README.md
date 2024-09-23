@@ -77,3 +77,39 @@ Mengimport HttpResponse dan serializers di views.py dan membuat method show_xml,
 Menambahkan rute URL pada urls.py. Untuk method show by id perlu tambahan `/<str:id>/` pada path urlpatterns.
 
 #### Mengakses keempat URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
+
+
+---
+### Tugas 4
+#### Apa perbedaan antara HttpResponseRedirect() dan redirect()
+HttpResponseRedirect() mengarahkan pengguna ke URL yang spesifik, sedangkan redirect() lebih fleksibel karena dapat menerima URL, nama view, atau objek model dan mengarahkannya secara otomatis.
+
+#### Jelaskan cara kerja penghubungan model Product dengan User!
+Model Product biasanya memiliki relasi ForeignKey ke model User. ForeignKey dapat merepresentasikan hubungan Many-to-One. Ini menunjukkan bahwa setiap produk dimiliki oleh satu pengguna, dan pengguna dapat memiliki banyak produk.
+
+#### Apa perbedaan antara authentication dan authorization, apakah yang dilakukan saat pengguna login? Jelaskan bagaimana Django mengimplementasikan kedua konsep tersebut.
+Authentication adalah proses memverifikasi identitas pengguna. Saat login, sistem akan melakukan verifikasi pengguna yang diizinkan untuk masuk ke sistem. Authorization adalah menentukan hak akses pengguna setelah terotentikasi. Django menggunakan fungsi authenticate() untuk memverifikasi identitas pengguna, dan login() untuk mencatat pengguna sebagai terautentikasi.
+Django menggunakan izin untuk mengatur otorisasi. Kita bisa menetapkan izin pada model dan memeriksanya di view dengan dekorator seperti @login_required.
+
+#### Bagaimana Django mengingat pengguna yang telah login? Jelaskan kegunaan lain dari cookies dan apakah semua cookies aman digunakan?
+Django menggunakan sesi dan cookies. Saat pengguna login, ID sesi disimpan di database dan di dalam cookie sessionid. Kegunaan lain dari cookies yaitu dapat menyimpan preferensi pengguna, seperti tema atau bahasa yang dipilih, sebagai penyimpanan data sementara, seperti item dalam keranjang belanja di situs e-commerce, dan juga dapat melacak aktivitas pengguna di situs untuk keperluan analisis. Tidak semua cookies aman digunakan, contohnya Session Hijacking yaitu cookie sesi dicuri sehingga penyerang dapat mengakses akun pengguna tanpa perlu login.
+
+#### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step
+**Mengimplementasikan fungsi registrasi, login, dan logout.**<br> 
+1. Membuat login html dan sign up html dengan form dan methodnya post.
+2. Membuat fungsi signup pada views.py yang memanggil UserCreationForm() dan menyimpan form lalu akan pindah ke page login.
+3. Membuat fungsi user_login yang memanggil AuthenticationForm(data=request.POST) dan akan men-get user kemudian akan menyimpan cookie dan mengarahkan user ke frontpage.
+4. Membuat fungsi logout_user yang akan mengarahkan ke page login dan menghapus cookie sebelumnya.
+5. Mengimport semua fungsi views lalu membuat path dari setiap fungsi.
+
+**Membuat dua akun pengguna dengan masing-masing tiga dummy data.**<br>
+Melakukan registrasi 2 akun pada page signup/ kemudian login dan menambahkan 3 data pada page create-product-entry/.
+
+**Menghubungkan model Product dengan User**<br>
+Menambahkan kode `user = models.ForeignKey(User, on_delete=models.CASCADE)` dalam class Product di models.py
+
+**Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi.**<br>
+Membuat context_processor yg mereturn current_user dan last_login untuk passing current_user dan last_login ke base.html yang berada di luar folder main.
+
+**Menjawab beberapa pertanyaan berikut pada README.md**<br>
+Memodifikasi README.md yang sudah dibuat sebelumnya.

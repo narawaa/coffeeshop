@@ -1,0 +1,47 @@
+<!-- LOGIN PAGE -->
+
+{% extends 'base.html' %}
+{% block content %}
+<section>
+    <div class="flex justify-center mt-12">
+        <div class="max-md:w-3/4 w-1/2 px-16 bg-gray-100 p-6 rounded-xl">
+            <div class="flex justify-center">
+                <h1 class="mb-6 text-xl font-bold">Login</h1>
+            </div>
+    
+            <form action="." method="post" class="space-y-3">
+                {% csrf_token %}
+                <div>
+                    <label>Username</label>
+                    <input type="text" name="username" class="w-full mt-2 py-4 px-6 bg-white rounded-xl">
+                </div>
+
+                <div>
+                    <label>Password</label>
+                    <input type="password" name="password" class="w-full mt-2 py-4 px-6 bg-white rounded-xl">
+                </div>
+
+                <!-- Print Error Gagal Login -->
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if message.tags == 'error' %}
+                            <div class="py-3 px-6 bg-red-200 text-red-800 rounded-xl">
+                                <p>{{ message }}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+
+                <div>
+                    <button class="py-4 px-6 rounded-xl text-white bg-blue-300 hover:bg-blue-400">
+                        Submit
+                    </button>
+                </div>
+            </form>
+
+            <p class="py-4">Don't have an account? <a href="{% url 'main:signup' %}" class="text-blue-400">Sign Up</a></p>
+        </div>
+
+    </div>
+</section>
+{% endblock content %}
