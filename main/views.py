@@ -65,6 +65,12 @@ def signup(request):
             form.save()
             messages.success(request, 'Account created successfully')
             return redirect('main:login')
+        
+        else:
+            print(form.errors)  # Ini akan menunjukkan kesalahan pada form
+            for field in form:
+                for error in field.errors:
+                    messages.error(request, error)
     
     context = {'form': form}
     return render(request, 'signup.html', context)
