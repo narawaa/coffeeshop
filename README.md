@@ -83,12 +83,12 @@ Menambahkan rute URL pada urls.py. Untuk method show by id perlu tambahan `/<str
 <img width="490" alt="Screenshot 2024-09-15 at 00 22 16" src="https://github.com/user-attachments/assets/27da225f-eb9a-431b-85d5-be525930ff8a">
 <img width="490" alt="Screenshot 2024-09-15 at 00 21 53" src="https://github.com/user-attachments/assets/3c644b5b-d83a-4053-ad11-16f154eec32c">
 <img width="490" alt="Screenshot 2024-09-15 at 00 21 53" src="https://github.com/user-attachments/assets/af83bcb0-16fe-4d91-af9b-538d697490b3">
-
-
+<br>
+<br>
 
 ---
 ### Tugas 4
-#### Apa perbedaan antara HttpResponseRedirect() dan redirect()<br>
+#### Apa perbedaan antara HttpResponseRedirect() dan redirect()?<br>
 HttpResponseRedirect() mengarahkan pengguna ke URL yang spesifik, sedangkan redirect() lebih fleksibel karena dapat menerima URL, nama view, atau objek model dan mengarahkannya secara otomatis.<br>
 
 #### Jelaskan cara kerja penghubungan model Product dengan User!<br>
@@ -100,7 +100,7 @@ Authentication adalah proses memverifikasi identitas pengguna. Saat login, siste
 #### Bagaimana Django mengingat pengguna yang telah login? Jelaskan kegunaan lain dari cookies dan apakah semua cookies aman digunakan?<br>
 Django menggunakan session ID dan cookies. Saat pengguna login, session ID akan disimpan. Kegunaan lain dari cookies yaitu dapat menyimpan preferensi pengguna, dapat menyimpan data sementara, dan juga dapat melacak aktivitas pengguna di situs untuk keperluan analisis. Tidak semua cookies aman digunakan, ada kasus dimana cookies berisi informasi sensitif seperti password namun tidak dienkripsi sehingga cookies ini memiliki kemungkinan untuk bisa diakses melalui JavaScript oleh pihak ketiga.<br>
 
-#### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step
+#### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step.
 **Mengimplementasikan fungsi registrasi, login, dan logout.**<br> 
 1. Membuat login html dan sign up html dengan form dan methodnya adalah post.
 2. Membuat fungsi signup pada views.py yang memanggil UserCreationForm() dan menyimpan form lalu akan pindah ke page login.
@@ -111,7 +111,7 @@ Django menggunakan session ID dan cookies. Saat pengguna login, session ID akan 
 **Membuat dua akun pengguna dengan masing-masing tiga dummy data.**<br>
 Melakukan registrasi 2 akun pada page signup/ kemudian login dan menambahkan 3 data pada page create-product-entry/ untuk kedua akun.<br>
 
-**Menghubungkan model Product dengan User**<br>
+**Menghubungkan model Product dengan User.**<br>
 Menambahkan kode `user = models.ForeignKey(User, on_delete=models.CASCADE)` dalam class Product di models.py<br>
 
 **Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi.**<br>
