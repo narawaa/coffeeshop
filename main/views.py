@@ -67,7 +67,7 @@ def signup(request):
             return redirect('main:login')
         
         else:
-            print(form.errors)  # Ini akan menunjukkan kesalahan pada form
+            print(form.errors)
             for field in form:
                 for error in field.errors:
                     messages.error(request, error)
