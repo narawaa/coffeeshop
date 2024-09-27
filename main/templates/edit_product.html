@@ -1,0 +1,25 @@
+<!-- EDIT PRODUCT PAGE -->
+
+{% extends 'base.html' %} 
+{% block content %}
+<section class="bg-blue-200 px-6 py-12 space-y-4">
+    <h1>Edit Product Entry</h1>
+    
+    <form method="POST">
+      {% csrf_token %}
+      <table>
+        {{ form.as_table }}
+        <tr>
+          <td></td>
+          <td>
+            <button type="submit" class="bg-white px-4 py-2">
+              Edit Product
+            </button>
+          </td>
+        </tr>
+      </table>
+    </form>
+
+</section>
+
+{% endblock %}

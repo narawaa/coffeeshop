@@ -10,6 +10,8 @@ urlpatterns = [
     path('signup/', signup, name='signup'),
     path('login/', user_login, name='login'),
     path('logout/', logout_user, name='logout'),
+    path('edit-product/<uuid:id>', edit_product, name='edit_product'),
+    path('delete/<uuid:id>', delete_product, name='delete_product'),
 
     # DATA
     path('xml/', show_xml, name='show_xml'),

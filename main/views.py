@@ -11,7 +11,7 @@ import datetime
 from main.forms import ProductEntryForm
 from main.models import Product
 
-# Create your views here.
+# PAGE
 @login_required(login_url='/login')
 def frontpage(request):
     products = Product.objects.filter(user=request.user)[0:4]
@@ -36,6 +36,25 @@ def create_product_entry(request):
     context = {'form': form}
     return render(request, 'product_entry.html', context)
 
+
+# METHOD
+def edit_product(request, id):
+    product = Product.objects.get(pk = id)
+
+    # Set product entry sebagai instance dari form
+    form = ProductEntryForm(request.POST or None, instance=product)
+
+    if form.is_valid() and request.method == "POST":
+        form.save()
+        return HttpResponseRedirect(reverse('main:frontpage'))
+
+    context = {'form': form}
+    return render(request, "edit_product.html", context)
+
+def delete_product(request, id):
+    product = Product.objects.get(pk = id)
+    product.delete()
+    return HttpResponseRedirect(reverse('main:frontpage'))
 
 # DATA
 def show_xml(request):

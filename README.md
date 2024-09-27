@@ -119,3 +119,16 @@ Membuat context_processor yg mereturn current_user dan last_login untuk passing 
 
 **Menjawab beberapa pertanyaan berikut pada README.md**<br>
 Memodifikasi README.md yang sudah dibuat sebelumnya.<br>
+<br>
+
+---
+### Tugas 5
+#### Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!<br>
+
+### Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design!<br>
+
+#### Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!<br>
+
+#### Jelaskan konsep flex box dan grid layout beserta kegunaannya!<br>
+
+#### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step!<br>
