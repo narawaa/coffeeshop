@@ -131,7 +131,7 @@ Memodifikasi README.md yang sudah dibuat sebelumnya.<br>
 
 Urutan prioritasnya adalah dari inline styles, ID selectors, classes selector, kemudian element selector.<br>
 
-### Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design!<br>
+#### Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design!<br>
 Responsive design penting karena memastikan situs web atau aplikasi bisa terlihat dan berfungsi dengan baik di berbagai perangkat, seperti smartphone, tablet, dan desktop. Ini menjadi konsep yang penting karena banyak orang yang sekarang mengakses internet melalui smartphone. Salah satu contoh aplikasi web yang sudan menerapkan responsive design adalah Google. Google bisa diakses dari perangkat manapun dan tetap nyaman untuk digunakan. Sebaliknya, salah satu contoh aplikasi web yang belum responsive adalah Siak NG.<br>
 
 #### Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!<br>
