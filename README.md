@@ -124,11 +124,49 @@ Memodifikasi README.md yang sudah dibuat sebelumnya.<br>
 ---
 ### Tugas 5
 #### Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!<br>
+1. Inline styles = CSS ditulis langsung di dalam atribut style pada suatu elemen HTML. contohnya `<p style="color: white;">Tes</p>`.
+2. ID selectors = menggunakan tanda # diikuti dengan nilai ID elemen.
+3. Classes selector = menggunakan tanda . diikuti dengan nama class. 
+4. Element selector = menggunakan nama elemen HTML seperti div, p, atau h1 sebagai selector.
+
+Urutan prioritasnya adalah dari inline styles, ID selectors, classes selector, kemudian element selector.<br>
 
 ### Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design!<br>
+Responsive design penting karena memastikan situs web atau aplikasi bisa terlihat dan berfungsi dengan baik di berbagai perangkat, seperti smartphone, tablet, dan desktop. Ini menjadi konsep yang penting karena banyak orang yang sekarang mengakses internet melalui smartphone. Salah satu contoh aplikasi web yang sudan menerapkan responsive design adalah Google. Google bisa diakses dari perangkat manapun dan tetap nyaman untuk digunakan. Sebaliknya, salah satu contoh aplikasi web yang belum responsive adalah Siak NG.<br>
 
 #### Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!<br>
+**Margin** adalah ruang kosong di luar elemen yang memisahkannya dari elemen lain dan berfungsi untuk mengontrol jarak antar elemen.
+**Border** adalah garis yang mengelilingi elemen di luar padding namun tetap berada di dalam margin dan bisa diatur tebal dan warnanya. 
+**Padding** adalah ruang di dalam elemen yang berada di antara konten elemen dan border dan digunakan untuk memberi jarak konten dari tepi elemen. 
+Contoh impelementasinya adalah :
+```
+.element {
+  margin: 20px;
+  border: 2px solid black;
+  padding: 15px;
+}
+```
 
 #### Jelaskan konsep flex box dan grid layout beserta kegunaannya!<br>
+**Flexbox** berfokus pada penyusunan elemen secara linier yaitu secara horizontal atau vertikal. Ini berguna untuk membuat tata letak yang responsif. Contohnya, flexbox sering digunakan untuk mengatur navigasi bar atau card yang fleksibel berdasarkan ukuran layar. 
+
+**Grid Layout** memberikan kontrol untuk mengatur elemen dalam bentuk baris dan kolom. Ini berguna untuk membuat desain yang lebih kompleks, seperti halaman dengan banyak layout seperti feeds IG. Grid membantu kita mengatur elemen-elemen dengan rapi dan terstruktur.
 
 #### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step!<br>
+**Implementasikan fungsi untuk menghapus dan mengedit product.**<br>
+Menambahkan fungsi edit_product dan delete_product berdasarkan id ke dalam views.py. Kemudian, menambahkan path dari kedua fungis tersebut ke dalam urls.py
+
+**Kustomisasi desain pada template HTML.**<br>
+1. Menggunakan tailwind untuk memberi style pada login, sigup, addproduct, dan editproduct.
+
+2. Membuat card_product.html yang berisi tampilan card info dari product product yang ada dan juga mempunyai button untuk mengedit dan menghapus product. Lalu memanggil card_product itu di main.html menggunakan include.
+
+3. Membuat folder static/image untuk menyimpan gambar. Kemudian menambahkan image tersebut ke main.html untuk menampilkan gambar jika belum ada data product yang tersimpan.
+
+4. Menambahkan konfigurasi file static dengan cara menambahkan `whitenoise.middleware.WhiteNoiseMiddleware` ke middleware, lalu menambahkan STATICFILES_DIRS dan juga STATIC_ROOT.
+
+5. Membuat responsive navbar pada base.html di folder templates menggunakan tailwind dan mengimplementasikan dropdown untuk pengguna yang sedang login dengan penanganan interaksi menggunakan JavaScript, termasuk menampilkan dan menyembunyikan menu dropdown dan menu mobile. 
+
+**Menjawab beberapa pertanyaan berikut pada README.md**<br>
+Memodifikasi README.md yang sudah dibuat sebelumnya.<br>
+<br>
