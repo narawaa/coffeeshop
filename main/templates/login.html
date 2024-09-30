@@ -4,7 +4,7 @@
 {% block content %}
 <section>
     <div class="flex justify-center mt-12 pt-12 pb-36">
-        <div class="max-md:w-3/4 w-1/2 px-16 bg-gray-100 p-6 rounded-xl">
+        <div class="w-3/4 md:w-1/2 px-12 md:px-16 bg-gray-100 p-12 rounded-xl">
             <div class="flex justify-center">
                 <h1 class="mb-6 text-xl font-bold">Login</h1>
             </div>
@@ -13,19 +13,19 @@
                 {% csrf_token %}
                 <div>
                     <label>Username</label>
-                    <input type="text" name="username" class="w-full mt-2 py-4 px-6 bg-white rounded-xl">
+                    <input type="text" name="username" class="w-full mt-2 py-2 md:py-4 px-6 bg-white rounded-xl text-sm md:text-base">
                 </div>
 
                 <div>
                     <label>Password</label>
-                    <input type="password" name="password" class="w-full mt-2 py-4 px-6 bg-white rounded-xl">
+                    <input type="password" name="password" class="w-full mt-2 py-2 md:py-4 px-6 bg-white rounded-xl text-sm md:text-base">
                 </div>
 
                 <!-- Print Error Gagal Login -->
                 {% if messages %}
                     {% for message in messages %}
                         {% if message.tags == 'error' %}
-                            <div class="py-3 px-6 bg-red-200 text-red-800 rounded-xl">
+                            <div class="py-1 md:py-3 px-6 bg-red-200 text-red-800 rounded-xl">
                                 <p>{{ message }}</p>
                             </div>
                         {% endif %}
@@ -33,7 +33,7 @@
                 {% endif %}
 
                 <div>
-                    <button class="py-4 px-6 rounded-xl text-white bg-blue-300 hover:bg-blue-400">
+                    <button class="py-2 md:py-4 px-5 md:px-6 rounded-xl text-white bg-blue-300 hover:bg-blue-400">
                         Submit
                     </button>
                 </div>
