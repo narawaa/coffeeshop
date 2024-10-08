@@ -194,21 +194,21 @@ Pembersihan data input pengguna juga penting dilakukan di backend karena kita pe
 Selain itu, pembersihan data di backend memastikan konsistensi dalam penanganan data. Ini mengurangi kemungkinan kesalahan yang mungkin terjadi jika hanya mengandalkan pembersihan di frontend dan memastikan bahwa hanya data yang valid dan aman yang akan diproses oleh sistem.
 
 #### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step!<br>
-1. **Ubahlah kode cards data mood agar dapat mendukung AJAX GET.**<br>
-Mengubah kode tampilan kartu mood untuk memungkinkan data diambil secara asinkronus menggunakan AJAX. Dengan ini, data yang ditampilkan pada kartu akan berasal dari permintaan GET AJAX, bukan dari rendering server langsung.
+1. **Ubahlah kode cards data product agar dapat mendukung AJAX GET.**<br>
+Mengubah kode tampilan product card untuk memungkinkan data diambil secara asinkronus menggunakan AJAX. Dengan ini, data yang ditampilkan pada kartu akan berasal dari permintaan GET AJAX, bukan dari rendering server langsung.
 
-2. **Lakukan pengambilan data mood menggunakan AJAX GET.**<br>Pastikan bahwa data yang diambil hanyalah data milik pengguna yang logged-in.
-Membuat fungsi JavaScript untuk mengirim permintaan AJAX GET dan  memfilter data sehingga hanya mengambil data mood yang dimiliki pengguna yang sedang login.
+2. **Lakukan pengambilan data product menggunakan AJAX GET. Pastikan bahwa data yang diambil hanyalah data milik pengguna yang logged-in.**<br>
+Membuat fungsi JavaScript untuk mengirim permintaan AJAX GET dan memfilter data sehingga hanya mengambil product yang dimiliki pengguna yang sedang login.
 ```
 async function getProduct() {
    return fetch("{% url 'main:show_json' %}").then((res) => res.json())
 }
 ```
 
-3. **Buatlah sebuah tombol yang membuka sebuah modal dengan form untuk menambahkan mood.**<br>
-Membuat sebuah tombol yang akan membuka modal dialog dengan kode `onclick="showModal();"`. Di dalam modal tersebut, tersedia form untuk memasukkan mood baru yang ingin ditambahkan pengguna.
+3. **Buatlah sebuah tombol yang membuka sebuah modal dengan form untuk menambahkan product.**<br>
+Membuat sebuah tombol yang akan membuka modal dialog dengan kode `onclick="showModal();"`. Di dalam modal tersebut, tersedia form untuk memasukkan product baru yang ingin ditambahkan pengguna.
 
-4. **Buatlah fungsi view baru untuk menambahkan mood baru ke dalam basis data.**<br>
+4. **Buatlah fungsi view baru untuk menambahkan product baru ke dalam basis data.**<br>
 Membuat fungsi create-ajax yang sudah ada strip tag dengan method POST dan mereturn HttpResponse(status=201) jika berhasil.
 
 5. **Buatlah path /create-ajax/ yang mengarah ke fungsi view yang baru kamu buat.**<br>
@@ -223,6 +223,6 @@ fetch("{% url 'main:create_ajax' %}", {
 })
 ```
 
-7. **Lakukan refresh pada halaman utama secara asinkronus untuk menampilkan daftar mood terbaru tanpa reload halaman utama secara keseluruhan.**<br>
-Membuat fungsi refreshProducts() untuk merefresh halaman, lalu fungsi ini dimasukkan ke fungsi addProduct() sehingga setiap kali tombol submit ditekan/produk baru ditambahkan, halaman akan di-refresh secara asinkronus.
+7. **Lakukan refresh pada halaman utama secara asinkronus untuk menampilkan daftar product terbaru tanpa reload halaman utama secara keseluruhan.**<br>
+Membuat fungsi refreshProducts() untuk merefresh halaman, lalu fungsi ini dimasukkan ke fungsi addProduct() sehingga setiap kali tombol submit, produk baru ditambahkan dans halaman akan di-refresh secara asinkronus.
 </details>
