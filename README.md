@@ -3,8 +3,9 @@ Tugas PBP : [Click Your Coffee Here!](http://nashwa-ghania-coffeeshop.pbp.cs.ui.
 <br>
 <br>
 
+<details>
+<summary>Tugas 2</summary>
 
-### Tugas 2
 #### Langkah Pengimplementasian
 
 1. **Membuat sebuah proyek Django baru.**<br>
@@ -50,12 +51,11 @@ Django menggunakan arsitektur Model-View-Template (MVT) yang membantu untuk mema
 #### Mengapa model pada Django disebut ORM?
 
 Model Django disebut ORM karena memungkinkan untuk berinteraksi dengan database menggunakan Python, tanpa menulis query SQL langsung. Django ORM secara otomatis mengonversi model Python menjadi tabel database, menjadikan proses pengelolaan data lebih mudah dan mengurangi kemungkinan kesalahan dalam penulisan query SQL manual.
+</details>
 
-<br>
-<br>
+<details>
+<summary>Tugas 3</summary>
 
----
-### Tugas 3
 #### Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?<br>
 Data delivery sangat diperlukan dalam pengimplementasian sebuah platform karena ia memastikan data yang diperlukan oleh aplikasi dapat dikirim dan diterima dengan tepat dan efisien antara server dan client. Tanpa sistem data delivery yang baik, data dapat rusak atau bahkan hilang. Proses data delivery mencakup pengiriman data secara real-time, pengelolaan bandwidth, serta jaminan keamanan data, sehingga pengguna mendapatkan akses yang stabil dan dapat mendapatkan informasi dan fitur yang mereka butuhkan.<br>
 
@@ -83,11 +83,11 @@ Menambahkan rute URL pada urls.py. Untuk method show by id perlu tambahan `/<str
 <img width="490" alt="Screenshot 2024-09-15 at 00 22 16" src="https://github.com/user-attachments/assets/27da225f-eb9a-431b-85d5-be525930ff8a">
 <img width="490" alt="Screenshot 2024-09-15 at 00 21 53" src="https://github.com/user-attachments/assets/3c644b5b-d83a-4053-ad11-16f154eec32c">
 <img width="490" alt="Screenshot 2024-09-15 at 00 21 53" src="https://github.com/user-attachments/assets/af83bcb0-16fe-4d91-af9b-538d697490b3">
-<br>
-<br>
+</details>
 
----
-### Tugas 4
+<details>
+<summary>Tugas 4</summary>
+
 #### Apa perbedaan antara HttpResponseRedirect() dan redirect()?<br>
 HttpResponseRedirect() mengarahkan pengguna ke URL yang spesifik, sedangkan redirect() lebih fleksibel karena dapat menerima URL, nama view, atau objek model dan mengarahkannya secara otomatis.<br>
 
@@ -118,11 +118,12 @@ Menambahkan kode `user = models.ForeignKey(User, on_delete=models.CASCADE)` dala
 Membuat context_processor yg mereturn current_user dan last_login untuk passing current_user dan last_login ke base.html yang berada di luar folder main.<br>
 
 **Menjawab beberapa pertanyaan berikut pada README.md**<br>
-Memodifikasi README.md yang sudah dibuat sebelumnya.<br>
-<br>
+Memodifikasi README.md yang sudah dibuat sebelumnya.
+</details>
 
----
-### Tugas 5
+<details>
+<summary>Tugas 5</summary>
+
 #### Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!<br>
 1. Inline styles = CSS ditulis langsung di dalam atribut style pada suatu elemen HTML. contohnya `<p style="color: white;">Tes</p>`.
 2. ID selectors = menggunakan tanda # diikuti dengan nilai ID elemen.
@@ -168,12 +169,12 @@ Menambahkan fungsi edit_product dan delete_product berdasarkan id ke dalam views
 5. Membuat responsive navbar pada base.html di folder templates menggunakan tailwind dan mengimplementasikan dropdown untuk pengguna yang sedang login dengan penanganan interaksi menggunakan JavaScript, termasuk menampilkan dan menyembunyikan menu dropdown dan menu mobile. 
 
 **Menjawab beberapa pertanyaan berikut pada README.md**<br>
-Memodifikasi README.md yang sudah dibuat sebelumnya.<br>
-<br>
-<br>
+Memodifikasi README.md yang sudah dibuat sebelumnya.
+</details>
 
----
-### Tugas 5
+<details>
+<summary>Tugas 6</summary>
+
 #### Jelaskan manfaat dari penggunaan JavaScript dalam pengembangan aplikasi web!<br>
 JavaScript memiliki peran penting dalam pengembangan aplikasi web modern karena memberikan manfaat seperti interaktivitas, manipulasi DOM, dan pengolahan data. Dengan JavaScript, kita dapat membuat elemen halaman web yang responsif terhadap interaksi pengguna, seperti klik, hover, dan input. JavaScript juga bisa menggunakan fitur fetch sehingga dapat mengambil data dari server tanpa perlu memuat ulang halaman serta bisa melakukan validasi formulir dan mengolah data input pengguna.
 
@@ -193,10 +194,10 @@ Pembersihan data input pengguna juga penting dilakukan di backend karena kita pe
 Selain itu, pembersihan data di backend memastikan konsistensi dalam penanganan data. Ini mengurangi kemungkinan kesalahan yang mungkin terjadi jika hanya mengandalkan pembersihan di frontend dan memastikan bahwa hanya data yang valid dan aman yang akan diproses oleh sistem.
 
 #### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step!<br>
-1. Ubahlah kode cards data mood agar dapat mendukung AJAX GET.
+1. **Ubahlah kode cards data mood agar dapat mendukung AJAX GET.**<br>
 Mengubah kode tampilan kartu mood untuk memungkinkan data diambil secara asinkronus menggunakan AJAX. Dengan ini, data yang ditampilkan pada kartu akan berasal dari permintaan GET AJAX, bukan dari rendering server langsung.
 
-2. Lakukan pengambilan data mood menggunakan AJAX GET. Pastikan bahwa data yang diambil hanyalah data milik pengguna yang logged-in.
+2. **Lakukan pengambilan data mood menggunakan AJAX GET.**<br>Pastikan bahwa data yang diambil hanyalah data milik pengguna yang logged-in.
 Membuat fungsi JavaScript untuk mengirim permintaan AJAX GET dan  memfilter data sehingga hanya mengambil data mood yang dimiliki pengguna yang sedang login.
 ```
 async function getProduct() {
@@ -204,16 +205,16 @@ async function getProduct() {
 }
 ```
 
-3. Buatlah sebuah tombol yang membuka sebuah modal dengan form untuk menambahkan mood.
+3. **Buatlah sebuah tombol yang membuka sebuah modal dengan form untuk menambahkan mood.**<br>
 Membuat sebuah tombol yang akan membuka modal dialog dengan kode `onclick="showModal();"`. Di dalam modal tersebut, tersedia form untuk memasukkan mood baru yang ingin ditambahkan pengguna.
 
-4.  Buatlah fungsi view baru untuk menambahkan mood baru ke dalam basis data.
+4. **Buatlah fungsi view baru untuk menambahkan mood baru ke dalam basis data.**<br>
 Membuat fungsi create-ajax yang sudah ada strip tag dengan method POST dan mereturn HttpResponse(status=201) jika berhasil.
 
-5. Buatlah path /create-ajax/ yang mengarah ke fungsi view yang baru kamu buat.
+5. **Buatlah path /create-ajax/ yang mengarah ke fungsi view yang baru kamu buat.**<br>
 Menambahkan path /create-ajax/ di urls.py yang akan mengarahkan ke view untuk menambahkan product by ajax.
 
-6. Hubungkan form yang telah kamu buat di dalam modal kamu ke path /create-ajax/.
+6. **Hubungkan form yang telah kamu buat di dalam modal kamu ke path /create-ajax/.**<br>
 Menambahkan kode ke fungsi addProduct():
 ```
 fetch("{% url 'main:create_ajax' %}", {
@@ -222,5 +223,6 @@ fetch("{% url 'main:create_ajax' %}", {
 })
 ```
 
-7. Lakukan refresh pada halaman utama secara asinkronus untuk menampilkan daftar mood terbaru tanpa reload halaman utama secara keseluruhan.
+7. **Lakukan refresh pada halaman utama secara asinkronus untuk menampilkan daftar mood terbaru tanpa reload halaman utama secara keseluruhan.**<br>
 Membuat fungsi refreshProducts() untuk merefresh halaman, lalu fungsi ini dimasukkan ke fungsi addProduct() sehingga setiap kali tombol submit ditekan/produk baru ditambahkan, halaman akan di-refresh secara asinkronus.
+</details>
