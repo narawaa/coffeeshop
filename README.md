@@ -170,3 +170,27 @@ Menambahkan fungsi edit_product dan delete_product berdasarkan id ke dalam views
 **Menjawab beberapa pertanyaan berikut pada README.md**<br>
 Memodifikasi README.md yang sudah dibuat sebelumnya.<br>
 <br>
+<br>
+
+---
+### Tugas 5
+#### Jelaskan manfaat dari penggunaan JavaScript dalam pengembangan aplikasi web!<br>
+JavaScript memiliki peran penting dalam pengembangan aplikasi web modern karena memberikan manfaat seperti interaktivitas, manipulasi DOM, dan pengolahan data. Dengan JavaScript, kita dapat membuat elemen halaman web yang responsif terhadap interaksi pengguna, seperti klik, hover, dan input. JavaScript juga bisa menggunakan fitur fetch sehingga dapat mengambil data dari server tanpa perlu memuat ulang halaman serta bisa melakukan validasi formulir dan mengolah data input pengguna.
+
+#### Jelaskan fungsi dari penggunaan await ketika kita menggunakan fetch()! Apa yang akan terjadi jika kita tidak menggunakan await?<br>
+Keyword await digunakan untuk menunggu response yang dikembalikan oleh fetch() sebelum melanjutkan eksekusi kode selanjutnya sehingga memungkinkan pemanggilan data secara asinkron.
+
+Jika tidak menggunakan await, kode akan terus berjalan tanpa menunggu response dari fetch(). Ini berarti bahwa bagian kode yang bergantung pada hasil dari fetch() mungkin akan dieksekusi sebelum response tersedia sehingga dapat menyebabkan error atau hasil yang tidak diinginkan.
+
+####  Mengapa kita perlu menggunakan decorator csrf_exempt pada view yang akan digunakan untuk AJAX POST?<br>
+
+
+#### Pada tutorial PBP minggu ini, pembersihan data input pengguna dilakukan di belakang (backend) juga. Mengapa hal tersebut tidak dilakukan di frontend saja?<br>
+Pembersihan data input pengguna juga penting dilakukan di backend karena kita perlu memastikan bahwa semua data yang diterima dari pengguna telah diperiksa dan dibersihkan sebelum disimpan atau diproses lebih lanjut. Ini membantu mencegah serangan seperti Cross-Site Scripting (XSS), yang bisa merusak data atau membahayakan pengguna. Dengan kata lain, pembersihan di backend menambah lapisan perlindungan ekstra untuk aplikasi kita.
+
+Selain itu, pembersihan data di backend memastikan konsistensi dalam penanganan data. Ini mengurangi kemungkinan kesalahan yang mungkin terjadi jika hanya mengandalkan pembersihan di frontend dan memastikan bahwa hanya data yang valid dan aman yang akan diproses oleh sistem.
+
+#### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step!<br>
+**AJAX GET.**<br>
+
+**AJAX POST.**<br>

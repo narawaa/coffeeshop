@@ -6,6 +6,9 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
+from django.views.decorators.http import require_POST
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.html import strip_tags
 
 import datetime
 from main.forms import ProductEntryForm
@@ -14,10 +17,10 @@ from main.models import Product
 # PAGE
 @login_required(login_url='/login')
 def frontpage(request):
-    products = Product.objects.filter(user=request.user)[0:4]
+    # products = Product.objects.filter(user=request.user)[0:4]
     last_login = request.COOKIES.get('last_login', 'Unknown')
     context = {
-        'products': products,
+        # 'products': products,
         'last_login': last_login,
         'name': request.user.username,
     }
@@ -28,9 +31,9 @@ def create_product_entry(request):
     form = ProductEntryForm(request.POST or None)
 
     if form.is_valid() and request.method == 'POST':
-        mood_entry = form.save(commit=False)
-        mood_entry.user = request.user
-        mood_entry.save()
+        product = form.save(commit=False)
+        product.user = request.user
+        product.save()
         return redirect('main:frontpage')
     
     context = {'form': form}
@@ -56,13 +59,14 @@ def delete_product(request, id):
     product.delete()
     return HttpResponseRedirect(reverse('main:frontpage'))
 
+
 # DATA
 def show_xml(request):
-    data = Product.objects.all()
+    data = Product.objects.filter(user = request.user)
     return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
 
 def show_json(request):
-    data = Product.objects.all()
+    data = Product.objects.filter(user = request.user)
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
 
 def show_xml_by_id(request, id):
@@ -120,3 +124,27 @@ def logout_user(request):
     response.delete_cookie('last_login')
     messages.success(request, 'Logged out successfully')
     return response
+
+
+# AJAX
+@csrf_exempt
+@require_POST
+def create_ajax(request):
+    name = request.POST.get('name')
+    price = request.POST.get('price')
+    description = request.POST.get('description')
+    stock = request.POST.get('stock')
+    user = request.user
+
+    if name != strip_tags(name) or description != strip_tags(description):
+        return HttpResponse('HTML tags are not allowed', status=400)
+
+    new_product = Product(
+        name = name,
+        price = price,
+        description = description,
+        stock = stock,
+        user = user,
+    )
+    new_product.save()
+    return HttpResponse(status=201)
