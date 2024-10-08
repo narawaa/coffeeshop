@@ -183,7 +183,9 @@ Keyword await digunakan untuk menunggu response yang dikembalikan oleh fetch() s
 Jika tidak menggunakan await, kode akan terus berjalan tanpa menunggu response dari fetch(). Ini berarti bahwa bagian kode yang bergantung pada hasil dari fetch() mungkin akan dieksekusi sebelum response tersedia sehingga dapat menyebabkan error atau hasil yang tidak diinginkan.
 
 ####  Mengapa kita perlu menggunakan decorator csrf_exempt pada view yang akan digunakan untuk AJAX POST?<br>
+Ketika melakukan permintaan AJAX POST, token CSRF biasanya disertakan dalam header sebagai bagian dari data form. Jika token CSRF tidak disertakan dalam permintaan AJAX, Django secara otomatis akan menolak permintaan tersebut sebagai bagian dari mekanisme keamanannya. 
 
+Alasan kenapa kita memerlukan decorator csrf_exempt adalah karena pada fungsi create-ajax, telah dilakukan autentikasi dan kita yakin bahwa permintaan tersebut valid. Oleh karena itu, kita dapat memutuskan untuk tidak memerlukan token CSRF untuk operasi tersebut. Dekorator `@csrf_exempt` digunakan untuk menonaktifkan pengecekan token CSRF pada view tersebut.
 
 #### Pada tutorial PBP minggu ini, pembersihan data input pengguna dilakukan di belakang (backend) juga. Mengapa hal tersebut tidak dilakukan di frontend saja?<br>
 Pembersihan data input pengguna juga penting dilakukan di backend karena kita perlu memastikan bahwa semua data yang diterima dari pengguna telah diperiksa dan dibersihkan sebelum disimpan atau diproses lebih lanjut. Ini membantu mencegah serangan seperti Cross-Site Scripting (XSS), yang bisa merusak data atau membahayakan pengguna. Dengan kata lain, pembersihan di backend menambah lapisan perlindungan ekstra untuk aplikasi kita.
@@ -191,6 +193,34 @@ Pembersihan data input pengguna juga penting dilakukan di backend karena kita pe
 Selain itu, pembersihan data di backend memastikan konsistensi dalam penanganan data. Ini mengurangi kemungkinan kesalahan yang mungkin terjadi jika hanya mengandalkan pembersihan di frontend dan memastikan bahwa hanya data yang valid dan aman yang akan diproses oleh sistem.
 
 #### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step!<br>
-**AJAX GET.**<br>
+1. Ubahlah kode cards data mood agar dapat mendukung AJAX GET.
+Mengubah kode tampilan kartu mood untuk memungkinkan data diambil secara asinkronus menggunakan AJAX. Dengan ini, data yang ditampilkan pada kartu akan berasal dari permintaan GET AJAX, bukan dari rendering server langsung.
 
-**AJAX POST.**<br>
+2. Lakukan pengambilan data mood menggunakan AJAX GET. Pastikan bahwa data yang diambil hanyalah data milik pengguna yang logged-in.
+Membuat fungsi JavaScript untuk mengirim permintaan AJAX GET dan  memfilter data sehingga hanya mengambil data mood yang dimiliki pengguna yang sedang login.
+```
+async function getProduct() {
+   return fetch("{% url 'main:show_json' %}").then((res) => res.json())
+}
+```
+
+3. Buatlah sebuah tombol yang membuka sebuah modal dengan form untuk menambahkan mood.
+Membuat sebuah tombol yang akan membuka modal dialog dengan kode `onclick="showModal();"`. Di dalam modal tersebut, tersedia form untuk memasukkan mood baru yang ingin ditambahkan pengguna.
+
+4.  Buatlah fungsi view baru untuk menambahkan mood baru ke dalam basis data.
+Membuat fungsi create-ajax yang sudah ada strip tag dengan method POST dan mereturn HttpResponse(status=201) jika berhasil.
+
+5. Buatlah path /create-ajax/ yang mengarah ke fungsi view yang baru kamu buat.
+Menambahkan path /create-ajax/ di urls.py yang akan mengarahkan ke view untuk menambahkan product by ajax.
+
+6. Hubungkan form yang telah kamu buat di dalam modal kamu ke path /create-ajax/.
+Menambahkan kode ke fungsi addProduct():
+```
+fetch("{% url 'main:create_ajax' %}", {
+   method: "POST",
+   body: new FormData(document.querySelector('#productForm')),
+})
+```
+
+7. Lakukan refresh pada halaman utama secara asinkronus untuk menampilkan daftar mood terbaru tanpa reload halaman utama secara keseluruhan.
+Membuat fungsi refreshProducts() untuk merefresh halaman, lalu fungsi ini dimasukkan ke fungsi addProduct() sehingga setiap kali tombol submit ditekan/produk baru ditambahkan, halaman akan di-refresh secara asinkronus.
